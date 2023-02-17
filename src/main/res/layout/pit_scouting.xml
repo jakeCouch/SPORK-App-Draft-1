@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#606060"
+    tools:context=".pit_scouting">
+
+    <!--
+    (This is an xml comment)
+    Match number TextView and EditText has IDs that correspond with pit_number as match
+    number is already used in the strategy portion of the app
+    which I don't know if we use anymore.
+    -->
+
+    <View
+        android:id="@+id/horizontal_space"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/vertical_space"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toBottomOf="@id/horizontal_space4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_space" />
+
+    <View
+        android:id="@+id/horizontal_space2"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="20dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/autonomous_pieces_bottom_editText" />
+
+    <View
+        android:id="@+id/horizontal_space4"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="8dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blue_penalty_points_editText" />
+
+    <View
+        android:id="@+id/half_horizontal_space3"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="8dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endgame_penalty_earned" />
+
+    <View
+        android:id="@+id/vertical_space_team_information"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal_space4"
+        app:layout_constraintEnd_toEndOf="@id/vertical_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team_information" />
+
+    <TextView
+        android:id="@+id/team_information"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:gravity="center"
+        android:text="@string/team_information"
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space" />
+
+    <TextView
+        android:id="@+id/robot_information"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:gravity="center"
+        android:text="Teleop Pd."
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space2" />
+
+    <TextView
+        android:id="@+id/student_name_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/name"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/name_editText"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space_team_information"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/name_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/vertical_space_team_information"
+        app:layout_constraintTop_toBottomOf="@+id/team_information"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/team_number_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/team_number"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/team_number_editText"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space_team_information"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/team_number_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toEndOf="@id/vertical_space_team_information"
+        app:layout_constraintTop_toBottomOf="@+id/name_editText"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/pit_number_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Match Number:"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/pit_number_editText"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space_team_information"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/pit_number_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toEndOf="@id/vertical_space_team_information"
+        app:layout_constraintTop_toBottomOf="@+id/team_number_editText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/teleop_pieces_top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Pieces Top"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/teleop_pieces_top_editText"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space_team_information"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/teleop_pieces_middle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:hint="Pieces Middle"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/teleop_pieces_middle_editText"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space_team_information"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/teleop_pieces_top_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toEndOf="@id/vertical_space_team_information"
+        app:layout_constraintTop_toBottomOf="@+id/robot_information"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/teleop_pieces_bottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:ems="10"
+        android:hint="Pieces Bottom"
+        android:importantForAutofill="no"
+        android:inputType="numberDecimal"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/teleop_pieces_bottom_editText"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space_team_information"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+
+
+    <EditText
+        android:id="@+id/teleop_pieces_middle_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_team_information"
+        app:layout_constraintTop_toBottomOf="@+id/teleop_pieces_top_editText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/teleop_pieces_bottom_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/vertical_space_team_information"
+        app:layout_constraintTop_toBottomOf="@+id/teleop_pieces_middle_editText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/drivetrain_information"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#C9FF0000"
+        android:gravity="center"
+        android:text="Autonomous Pd."
+        android:textColor="@color/white"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space" />
+
+    <View
+        android:id="@+id/vertical_space_drivetrain"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/horizontal_space4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/drivetrain_information" />
+
+
+    <TextView
+        android:id="@+id/autonomous_pieces_top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Pieces Top"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/autonomous_pieces_top_editText"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space_drivetrain"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/vertical_space" />
+
+    <EditText
+        android:id="@+id/autonomous_pieces_top_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_drivetrain"
+        app:layout_constraintTop_toBottomOf="@+id/dock_checkbox"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/autonomous_pieces_bottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Pieces Bottom"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/autonomous_pieces_bottom_editText"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space_drivetrain"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/vertical_space" />
+
+    <EditText
+        android:id="@+id/autonomous_pieces_bottom_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:inputType="number"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/vertical_space_drivetrain"
+        app:layout_constraintTop_toBottomOf="@+id/autonomous_pieces_middle_editText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/autonomous_pieces_middle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Pieces Middle"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/autonomous_pieces_middle_editText"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space_drivetrain"
+        app:layout_constraintStart_toEndOf="@id/vertical_space" />
+
+    <EditText
+        android:id="@+id/autonomous_pieces_middle_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/vertical_space_drivetrain"
+        app:layout_constraintTop_toBottomOf="@+id/autonomous_pieces_top_editText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/powercell_strategy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#C9FF0000"
+        android:gravity="center"
+        android:text="End Game"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space2" />
+
+    <TextView
+        android:id="@+id/autonomous_strategy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#C9FF0000"
+        android:gravity="center"
+        android:text="End of Match"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/half_horizontal_space3" />
+
+    <EditText
+        android:id="@+id/additional_comment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/additional_comment"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/additional_information" />
+
+    <TextView
+        android:id="@+id/additional_information"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#C9FF0000"
+        android:gravity="center"
+        android:text="@string/additional_information"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space4" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="#606060"
+        android:gravity="center"
+        android:text="@string/submit_pit_data"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintTop_toBottomOf="@id/horizontal_space5" />
+
+    <View
+        android:id="@+id/horizontal_space5"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/additional_comment" />
+
+    <TextView
+        android:id="@+id/driver_station"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Driver Station:"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/driver_station_spinner"
+        app:layout_constraintEnd_toEndOf="@+id/vertical_space_team_information"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/pit_number_text" />
+
+    <CheckBox
+        android:id="@+id/leave_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:text="Leave"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space_drivetrain"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/drivetrain_information" />
+
+    <CheckBox
+        android:id="@+id/dock_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Docked"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/leave_checkbox"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_drivetrain" />
+
+    <CheckBox
+        android:id="@+id/engaged_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="4dp"
+        android:text="Engaged"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/leave_checkbox" />
+
+    <CheckBox
+        android:id="@+id/endgame_docked_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="Docked"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/powercell_strategy" />
+
+    <CheckBox
+        android:id="@+id/endgame_engaged_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Engaged"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_drivetrain"
+        app:layout_constraintTop_toBottomOf="@+id/powercell_strategy" />
+
+    <CheckBox
+        android:id="@+id/endgame_parked_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="Parked"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/endgame_docked_checkbox" />
+
+    <CheckBox
+        android:id="@+id/endgame_coopertition_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cooperition"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_drivetrain"
+        app:layout_constraintTop_toBottomOf="@+id/endgame_engaged_checkbox" />
+
+    <CheckBox
+        android:id="@+id/endgame_sustainability_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Sustainability"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/endgame_parked_checkbox" />
+
+    <CheckBox
+        android:id="@+id/endgame_broken_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:text="Broken"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/endgame_sustainability_checkbox" />
+
+    <CheckBox
+        android:id="@+id/endgame_disabled_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disabled"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_drivetrain"
+        app:layout_constraintTop_toBottomOf="@+id/endgame_sustainability_checkbox" />
+
+    <TextView
+        android:id="@+id/endgame_penalty_earned"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:text="Penalty Earned"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/penalty_spinner"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space_drivetrain"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space" />
+
+    <TextView
+        android:id="@+id/red_total_points"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="3dp"
+        android:text="Red Total Points"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/red_total_points_editText"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space_team_information"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/red_penalty_points"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Penalty Points"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/red_penalty_points_editText"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space_team_information"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/blue_total_points"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginBottom="3dp"
+        android:text="Blue Total Points"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/blue_total_points_editText"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space_drivetrain"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space" />
+
+    <TextView
+        android:id="@+id/blue_penalty_points"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:text="Penalty Points"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/blue_penalty_points_editText"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space_drivetrain"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space" />
+
+    <Spinner
+        android:id="@+id/penalty_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Select"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/endgame_penalty_earned"
+        app:layout_constraintTop_toBottomOf="@+id/endgame_disabled_checkbox" />
+
+    <Spinner
+        android:id="@+id/driver_station_spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:contentDescription="Red 1"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/driver_station"
+        app:layout_constraintTop_toBottomOf="@+id/pit_number_editText" />
+
+    <EditText
+        android:id="@+id/red_total_points_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_team_information"
+        app:layout_constraintTop_toBottomOf="@+id/autonomous_strategy" />
+
+    <EditText
+        android:id="@+id/red_penalty_points_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/red_penalty_points"
+        app:layout_constraintTop_toBottomOf="@+id/red_total_points_editText" />
+
+    <EditText
+        android:id="@+id/blue_total_points_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_drivetrain"
+        app:layout_constraintTop_toBottomOf="@+id/autonomous_strategy" />
+
+    <EditText
+        android:id="@+id/blue_penalty_points_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_drivetrain"
+        app:layout_constraintTop_toBottomOf="@+id/blue_total_points_editText" />
+</androidx.constraintlayout.widget.ConstraintLayout>
